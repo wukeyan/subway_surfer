@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            position: relative;
+            margin: 0;
+        }
+
+        #canvas {
+            /* margin: 40px auto; */
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        #heroCanvas {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #enemyCanvas {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #coinCanvas {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #test {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #playBG {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 67px;
+            height: 25px;
+            /* border: 1px solid #000; */
+            background-color: rgb(148, 248, 173);
+            border-radius: 5px;
+            animation: playBtn 1s ease infinite;
+            color: rgb(7, 88, 64);
+            font-size: 16px;
+        }
+
+        @keyframes playBtn {
+            0% {
+                width: 75px;
+                height: 25px;
+                font-size: 16px;
+            }
+
+            50% {
+                width: 78px;
+                height: 30px;
+                /* height: 19px; */
+                padding-left: 6px;
+                font-size: 18px;
+            }
+
+            100% {
+                width: 80px;
+                height: 25px;
+                font-size: 16px;
+            }
+        }
+
+        #pauseMusic {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 67px;
+            height: 25px;
+            /* border: 1px solid #000; */
+            background-color: rgb(100, 102, 101);
+            border-radius: 5px;
+            color: rgb(250, 255, 254);
+            font-size: 16px;
+            display: none;
+        }
+
+        #showGrade {
+            position: absolute;
+            left: 368px;
+            top: 0;
+            width: 10px;
+            height: 25px;
+            border-radius: 5px;
+            color: rgb(248, 192, 6);
+            font-size: 25px;
+            font-weight: bolder;
+            /* border: 1px solid #000; */
+        }
+
+        .CoinImg {
+            position: absolute;
+            left: 345px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+        }
+
+        #gameOver {
+            position: absolute;
+            left: 66px;
+            top: 150px;
+            width: 300px;
+            height: 300px;
+            /* border: 1px solid #000; */
+            background-image: url('../img/Overgame.png');
+            background-repeat: no-repeat;
+            background-size: 300px 300px;
+            /* background-color: #fff; */
+            display: none;
+        }
+
+
+
+        #gameOver p {
+            margin-top: 160px;
+            margin-left: 130px;
+            color: rgb(248, 192, 6);
+            font-size: 35px;
+            font-weight: bolder;
+        }
+
+        #GofirstPage {
+            position: absolute;
+            margin-left: 30px;
+            margin-top: -10px;
+            width: 100px;
+            height: 50px;
+        }
+
+        #againGame {
+            position: absolute;
+            margin-left: 155px;
+            margin-top: -10px;
+            width: 100px;
+            height: 50px;
+        }
+
+        #arrive {
+            position: absolute;
+            left: 66px;
+            top: 150px;
+            width: 300px;
+            height: 400px;
+            /* border: 1px solid #000; */
+            background-image: url('../img/arrive.png');
+            background-repeat: no-repeat;
+            background-size: 300px 400px;
+            /* background-color: #fff; */
+            display: none;
+        }
+
+        #Gofirst {
+            position: absolute;
+            margin-left: 10px;
+            margin-top: 310px;
+            width: 130px;
+            height: 50px;
+        }
+
+        #jixuGame {
+            position: absolute;
+            margin-left: 155px;
+            margin-top: 310px;
+            width: 140px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body onload="draw()">
+    <canvas id="canvas" width="410" height="735">你的浏览器太low，不支持canvas，请更新~</canvas>
+    <canvas id="heroCanvas" width="410" height="735">你的浏览器太low，不支持canvas，请更新~</canvas>
+    <canvas id="coinCanvas" width="410" height="735">你的浏览器太low，不支持canvas，请更新~</canvas>
+    <canvas id="enemyCanvas" width="410" height="735">你的浏览器太low，不支持canvas，请更新~</canvas>
+    <!-- <canvas id="coinCanvas" width="410" height="735">你的浏览器太low，不支持canvas，请更新~</canvas> -->
+    <!-- <canvas id="test" width="410" height="735">你的浏览器太low，不支持canvas，请更新~</canvas> -->
+    <div id="playBG">播放音乐</div>
+    <div id="pauseMusic">暂停音乐</div>
+    <img class="CoinImg" src="../img/SmallCoin.png" alt="">
+    <div id="showGrade"> 0</div>
+    <div id="gameOver">
+        <p id="FinallGrade">0</p><a href="../index.html"><img id="GofirstPage" src="../img/3.png" alt=""></a><img
+            id="againGame" src="../img/2.png" alt="">
+    </div>
+    <div id="arrive"><a href="../index.html"><img id="Gofirst" src="../img/Gofirst.png" alt=""></a><img id="jixuGame"
+            src="../img/jixu.png" alt=""></div>
+</body>
+
+<script src="../js/background.js"></script>
+<script src="../js/hero.js"></script>
+<script src="../js/coin.js"></script>
+<script src="../js/enemy.js"></script>
+<script>
+    /** @type {HTMLCanvasElement} */
+    var grade = 0
+
+    function draw() {
+
+        var playBG = document.getElementById('playBG')
+        var pauseMusic = document.getElementById('pauseMusic')
+        var FinallGrade = document.getElementById('FinallGrade')
+        var showGrade = document.getElementById('showGrade')
+        var GofirstPage = document.getElementById('GofirstPage')
+        var againGame = document.getElementById('againGame')
+        var gameOver = document.getElementById('gameOver')
+        var jixuGame = document.getElementById('jixuGame')
+        var arrive = document.getElementById('arrive')
+
+        //到站了
+        setTimeout(function () {
+            clearInterval(eTimer)
+            clearInterval(trainTimer)
+            clearInterval(CTimer)
+            arrive.style.display = 'block'
+            bgSound.pause()
+            clearInterval(bkgTimer)
+            clearInterval(coinTimer)
+            CTimer = null
+            eTimer = null
+            coinTimer = null
+            trainTimer = null
+            bkgTimer = null
+        }, 15000)
+        jixuGame.onclick = function () {
+            arrive.style.display = 'none'
+            bgSound.play()
+            CTimer = setInterval(CoinF, 10)
+            eTimer = setInterval(trainF, 30)
+            coinTimer = setInterval(coinShow, 1000)
+            trainTimer = setInterval(creatTrain, 1000)
+            bkgTimer = setInterval(bkgShow, 0.1)
+        }
+        var gradeTimer = setInterval(function () {
+            showGrade.innerHTML = grade
+        }, 10)
+        var gradeTimer = setInterval(function () {
+            FinallGrade.innerHTML = grade
+        }, 10)
+        againGame.onclick = function () {
+            gameOver.style.display = 'none'
+            location.reload()
+        }
+        //播放背景音乐
+        playBG.onclick = function () {
+            playBG.style.display = 'none'
+            bgSound.play()
+            pauseMusic.style.display = 'block'
+        }
+        //暂停背景音乐
+        pauseMusic.onclick = function () {
+            bgSound.pause()
+            pauseMusic.style.display = 'none'
+            playBG.style.display = 'block'
+        }
+
+        const bgcanvas = document.getElementById('canvas')
+        var bgSound = new Audio('../music/BG2.mp3')
+        if (bgcanvas.getContext) {
+            var ctx = bgcanvas.getContext('2d')
+            var bgURL = '../img/bg2.jpg'
+            loadBackground(bgURL, bgcanvas, moveBackground)
+
+            function moveBackground(bgImage) {
+                bgSound.loop = true
+                bgSound.muted = false
+            }
+            function bkgShow() {
+                //速度
+                var speed = 1
+                //方法
+                animateBackground(bgcanvas, speed)
+            }
+            var bkgTimer = setInterval(bkgShow, 0.1)
+
+            //主角出场
+            var heroCanvas = document.getElementById('heroCanvas')
+            var imgURL = '../img/hero.png'
+            var context = heroCanvas.getContext('2d')
+            var hero = createHero(50, 80, heroCanvas, imgURL, heroLoading)
+
+            function heroLoading(image) {
+                hero.draw(heroCanvas)
+            }
+
+            setInterval(function () {
+                context.clearRect(0, 0, 410, 735)
+                hero.draw(heroCanvas)
+            }, 30)
+
+            //硬币出场
+            var cCanvas = document.getElementById('coinCanvas')
+            var cContext = cCanvas.getContext('2d')
+            var getCoinSound = new Audio('../music/getCoin2.mp3')
+            var cWidth = 45
+            var cHeight = 50
+            var cURL = '../img/bigCoin.png'
+            var coinArray = new Array()
+
+            function coinShow() {
+                var coin = createCoin(cWidth, cHeight, cURL, hero)
+                coinArray.push(coin)
+            }
+            var coinTimer = setInterval(coinShow, 1000)
+
+            function CoinF() {
+                //清除画布
+                cContext.clearRect(0, 0, 410, 735)
+                for (var i = 0; i < coinArray.length; i++) {
+                    //判断硬币是否出屏幕
+                    if (coinArray[i].isOutOfSreen()) {
+                        coinArray.splice(i, 1)
+                    }
+                    coinArray[i].move()
+                    coinArray[i].draw(cCanvas)
+                    //判断硬币是否被吃到
+                    if (isEnemyHitHero(coinArray[i], hero)) {
+                        getCoinSound.loop = false
+                        getCoinSound.muted = false
+                        getCoinSound.play()
+                        grade++
+                        console.log(grade)
+                        coinArray.splice(i, 1)
+                    }
+
+                }
+            }
+            var CTimer = setInterval(CoinF, 10)
+
+            //创建绿皮火车
+            var eCanvas = document.getElementById('enemyCanvas')
+            var FailSound = new Audio('../music/fail.mp3')
+            var Fail2Sound = new Audio('../music/wrong2.mp3')
+            var eContext = eCanvas.getContext('2d')
+            var enemyArray = new Array()
+            function creatTrain() {
+                //随机获取1~3的数值，由于匹配不同的绿皮火车
+                var number = getRandForNum(1, 2)
+                var enemy
+                switch (number) {
+                    case 1:
+                        enemy = createEney(50, 160, '../img/2enemy.png', eCanvas)
+                        break;
+                    case 2:
+                        enemy = createEney(50, 250, '../img/3enemy.png', eCanvas)
+                        break;
+                }
+                enemyArray.push(enemy)
+            }
+
+            var trainTimer = setInterval(creatTrain, 1000)
+
+            function trainF() {
+                eContext.clearRect(0, 0, 410, 735)
+
+                for (var i = 0; i < enemyArray.length; i++) {
+                    enemyArray[i].move()
+                    enemyArray[i].draw(eCanvas)
+                    //碰撞检测
+                    if (enemyArray[i].isEnemyHitHero(enemyArray[i], hero)) {
+                        FailSound.loop = false
+                        FailSound.muted = false
+                        FailSound.play()
+                        Fail2Sound.loop = false
+                        Fail2Sound.muted = false
+                        Fail2Sound.play()
+                        clearInterval(eTimer)
+                        clearInterval(coinTimer)
+                        clearInterval(trainTimer)
+                        clearInterval(gradeTimer)
+                        coinTimer = null
+                        trainTimer = null
+                        gradeTimer = null
+                        eTimer = null
+                        gameOver.style.display = 'block'
+                    }
+                    // 判断绿皮火车是否出屏
+                    else if (enemyArray[i].isOutOfSreen(eCanvas)) {
+                        enemyArray.splice(i, 1)
+                    }
+                }
+            }
+
+            //让绿皮火车走起来
+            var eTimer = setInterval(trainF, 30)
+        }
+
+
+
+    }
+</script>
+
+</html>

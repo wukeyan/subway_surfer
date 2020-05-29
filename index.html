@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homePage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="./css/mui.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: url('./img/achieveImg1/topBGI.png');
+            background-size: cover;
+            background-color: rgb(197, 215, 221);
+        }
+
+        header {
+            margin-top: 20px !important;
+        }
+
+        .Img span img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .RightImg img {
+            width: 150px;
+            height: 150px;
+            margin-top: -48px;
+            margin-right: -40px;
+        }
+
+        header {
+            background-color: #1887f7 !important;
+            border-bottom: none !important;
+            box-shadow: 0 1px 6px #1887f7 !important;
+        }
+
+        header h1 {
+            color: #fff !important;
+            font-size: 22px !important;
+        }
+
+        .bgc {
+            color: white !important;
+        }
+
+        .userRegion {
+            width: 280px;
+            height: 140px;
+            margin: 80px;
+            margin-top: 110px;
+            border-radius: 18px;
+            background: linear-gradient(to bottom right, #c1ddf8, #3795ec);
+            position: relative;
+        }
+
+        .headPortrit {
+            width: 80px;
+            height: 70px;
+            /* border: 1px solid #000; */
+            margin: 20px auto;
+        }
+
+        .headPortrit img {
+            width: 80px;
+            height: 70px;
+        }
+
+        .footRegion {
+            display: flex;
+        }
+
+        .headPortrit p {
+            color: #fff;
+            margin-left: 25px;
+        }
+
+        .footRegion .honor {
+            position: absolute;
+            margin-left: 20px;
+            bottom: -10px;
+        }
+
+        .footRegion .honor p {
+            color: #fff;
+        }
+
+        .footRegion .integral img {
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            bottom: 5px;
+            right: 50px;
+        }
+
+        .footRegion .integral p {
+            color: #fff;
+            position: absolute;
+            bottom: -8px;
+            right: 25px;
+        }
+
+        .pregress {
+            margin-left: 20px;
+            margin-top: -32px;
+        }
+
+        .pregress img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .mainContain {
+            display: flex;
+            margin-top: -80px;
+        }
+
+        .mainContain div {
+            width: 190px;
+            height: 210px;
+        }
+
+        .mainContain div img {
+            width: 190px;
+            height: 210px;
+        }
+
+        .smallContent1 {
+            margin-top: -20px;
+            margin-left: 55px;
+        }
+
+        .smallContent2 {
+            margin-left: -50px;
+        }
+
+        .mainContain2 {
+            margin-top: -60px;
+        }
+
+        .smallContent22 {
+            margin-left: -40px;
+        }
+
+        .smallContent111 {
+            margin-top: -10px;
+        }
+
+        .smallContent222 {
+            margin-left: -40px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="mui-bar mui-bar-nav">
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left bgc"></a>
+        <h1 class="mui-title">跑一跑</h1>
+        <a class="mui-pull-right RightImg"><img src="./img/achieveImg1/topRight.png" alt=""></a>
+    </header>
+    <div class="userRegion">
+        <div class="headPortrit"><img src="./img/achieveImg1/panda.png" alt="">
+            <p>李华</p>
+        </div>
+
+        <div class="footRegion">
+            <div class="honor">
+                <p>等级：10</p>
+            </div>
+            <div class="pregress">
+                <img src="./img/FirstPageImg/pregress.png" alt="">
+            </div>
+            <div class="integral">
+                <img src="./img/FirstPageImg/integral.png" alt="">
+                <p>100</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 九宫格区域 -->
+    <div class="mainContain1 mainContain">
+        <div class="smallContent1"><a href="./html/game.html"><img src="./img/FirstPageImg/ordinary.png" alt=""></a>
+        </div>
+        <div class="smallContent2"><a href="./html/shop.html"><img src="./img/FirstPageImg/shop.png" alt=""></a></div>
+    </div>
+
+    <div class="mainContain2 mainContain">
+        <div class="smallContent11 smallContent1"><a href="./html/teach.html"><img src="./img/FirstPageImg/study.png"
+                    alt=""></a></div>
+        <div class="smallContent22 smallContent2"><a href="./html/achievement.html"><img
+                    src="./img/FirstPageImg/achievement.png" alt=""></a></div>
+    </div>
+
+    <div class="mainContain3 mainContain">
+        <div class="smallContent111 smallContent1"><a href="./html/rankingList.html"><img
+                    src="./img/FirstPageImg/RankList.png" alt=""></a></div>
+        <div class="smallContent222 smallContent2"><a href="./html/setting.html"><img
+                    src="./img/FirstPageImg/setting.png" alt=""></a></div>
+    </div>
+
+    <script src="./js/mui.js"></script>
+    <script>
+        mui.init({
+            swipeBack: true //启用右滑关闭功能
+        });
+    </script>
+</body>
+
+</html>

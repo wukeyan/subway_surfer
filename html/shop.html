@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>achievenment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../css/mui.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            margin-top: 20px !important;
+        }
+
+        body {
+            background-image: url('../img/achieveImg1/topBGI.png');
+            background-size: cover;
+            background-color: rgb(225, 235, 238);
+        }
+
+        .Img span img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .RightImg img {
+            width: 150px;
+            height: 150px;
+            margin-top: -48px;
+            margin-right: -40px;
+        }
+
+        header {
+            background-color: #1887f7 !important;
+            border-bottom: none !important;
+            box-shadow: 0 1px 6px #1887f7 !important;
+        }
+
+        header h1 {
+            color: #fff !important;
+            font-size: 22px !important;
+        }
+
+        .bgc {
+            color: white !important;
+        }
+
+        .maincotent1 {
+            display: flex;
+            margin: 120px auto;
+            width: 100%;
+            height: 560px;
+            position: relative;
+        }
+
+        .maincotent11 {
+            width: 90px;
+            height: 60px;
+            border: 1px solid #1887f7;
+            border-radius: 15px;
+            line-height: 50px;
+            text-align: center;
+            color: #fff;
+            background-color: #7fbaf5;
+        }
+
+
+
+        .maincotent1 .main {
+            width: 340px;
+            height: 500px;
+            position: absolute;
+            border: 1px solid #1887f7;
+            margin-left: 35px;
+            margin-top: 44px;
+            background-color: #fff;
+            border-radius: 15px;
+        }
+
+        #active {
+            background-color: #fff;
+            color: #7dbaf7;
+        }
+
+        .main {
+            display: none;
+        }
+
+        #DisMain {
+            display: block;
+        }
+
+        .content1 {
+            width: 90%;
+            height: 25%;
+            margin-left: 15px;
+            margin-top: 28px;
+            display: flex;
+        }
+
+        .maincotent111 {
+            margin-left: 70px;
+        }
+
+        .content111 {
+            width: 95px;
+            height: 95px;
+            background-color: rgb(225, 235, 238);
+            border-radius: 15px;
+        }
+
+        .content111 :nth-child(1) {
+            width: 95px;
+            height: 95px;
+            border: 1px solid #3d95ee;
+            border-radius: 15px;
+        }
+
+        .content111 :nth-child(2) {
+            width: 20px;
+            height: 20px;
+            margin-left: 25px;
+        }
+
+        .content111 p {
+            margin-top: -25px;
+            margin-left: 45px;
+        }
+
+        .content222 {
+            margin-left: 10px;
+        }
+
+        #FirstAid {
+            position: absolute;
+            width: 250px;
+            height: 200px;
+            /* border: 1px solid #000; */
+            display: none;
+            margin-left: 25px;
+            margin-top: 30px;
+            background: linear-gradient(to bottom, rgb(72, 72, 241), #fff);
+            animation: FirstAidShow 0.5s ease-in forwards;
+        }
+
+        @keyframes FirstAidShow {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+
+        }
+
+        #FirstAid img {
+            margin-top: -25px;
+            margin-left: 50px;
+        }
+
+        #FirstAid p {
+            font-size: 30px;
+            margin-left: 30px;
+            margin-top: 10px;
+            color: rgb(40, 248, 12);
+        }
+
+        #firstAidKit {
+            position: absolute;
+
+            width: 250px;
+            height: 200px;
+            /* border: 1px solid #000; */
+            display: none;
+            margin-left: 25px;
+            margin-top: 30px;
+            background: linear-gradient(to bottom, rgb(72, 72, 241), #fff);
+            animation: FirstAidShow 0.5s ease-in forwards;
+        }
+
+        #firstAidKit img {
+            margin-top: -25px;
+            margin-left: 50px;
+        }
+
+        #firstAidKit p {
+            color: red;
+            font-size: 22px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="mui-bar mui-bar-nav">
+        <a href="../index.html"><i class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left bgc"></i></a>
+        <h1 class="mui-title">商店</h1>
+        <a class="mui-pull-right RightImg"><img src="../img/achieveImg1/topRight.png" alt=""></a>
+    </header>
+    <!-- 到此为止 -->
+    <!-- 主题区 -->
+    <div class="maincotent1">
+
+        <div class="maincotent11 maincotent111" id="active">道具</div>
+        <div class="maincotent11">装扮</div>
+        <div class="maincotent11">优惠卷</div>
+        <div class="main" id="DisMain">
+            <div class="content1 content11">
+                <div id="FirstAid"><img src="../img/ShopImg/1.png" alt="">
+                    <p>换取商品成功 !</p>
+                </div>
+                <div id="firstAidKit"><img src="../img/ShopImg/6.png" alt="">
+                    <p>换取商品成功，金币不足</p>
+                    <!-- <img src="../img/ShopImg/integral.png" alt=""> -->
+                </div>
+                <!-- 主页面 -->
+                <div id="FirstAidMedic" class="content111"><img src="../img/ShopImg/1.png" alt=""><img
+                        src="../img/ShopImg/integral.png" alt="">
+                    <p>100</p>
+                </div>
+                <div class="content111 content222"><img src="../img/ShopImg/2.png" alt=""><img
+                        src="../img/ShopImg/integral.png" alt="">
+                    <p>100</p>
+                </div>
+                <div class="content111 content222"><img src="../img/ShopImg/3.png" alt=""><img
+                        src="../img/ShopImg/integral.png" alt="">
+                    <p>100</p>
+                </div>
+            </div>
+            <div class="content1 content11">
+                <div class="content111"><img src="../img/ShopImg/4.png" alt=""><img src="../img/ShopImg/integral.png"
+                        alt="">
+                    <p>100</p>
+                </div>
+                <div class="content111 content222"><img src="../img/ShopImg/5.png" alt=""><img
+                        src="../img/ShopImg/integral.png" alt="">
+                    <p>100</p>
+                </div>
+                <div id="firstAidKitShop" class="content111 content222"><img src="../img/ShopImg/6.png" alt=""><img
+                        src="../img/ShopImg/integral.png" alt="">
+                    <p>100</p>
+                </div>
+            </div>
+            <div class="content1 content11">
+                <div class="content111"><img src="../img/ShopImg/7.png" alt=""><img src="../img/ShopImg/integral.png"
+                        alt="">
+                    <p>100</p>
+                </div>
+                <div class="content111 content222"><img src="../img/ShopImg/8.png" alt=""><img
+                        src="../img/ShopImg/integral.png" alt="">
+                    <p>100</p>
+                </div>
+                <div class="content111 content222"><img src="../img/ShopImg/9.png" alt=""><img
+                        src="../img/ShopImg/integral.png" alt="">
+                    <p>100</p>
+                </div>
+            </div>
+        </div>
+        <div class="main">22222
+        </div>
+        <div class="main">3333333333
+        </div>
+    </div>
+    <script src="../js/mui.js"></script>
+    <script>
+        mui.init({
+            swipeBack: true //启用右滑关闭功能
+        });
+        var maincotent11 = document.getElementsByClassName('maincotent11')
+        var main = document.getElementsByClassName('main')
+        var FirstAid = document.getElementById('FirstAid')
+        var FirstAidMedic = document.getElementById('FirstAidMedic')
+        var firstAidKitShop = document.getElementById('firstAidKitShop')
+        var firstAidKit = document.getElementById('firstAidKit')
+        var i
+        for (i = 0; i < maincotent11.length; i++) {
+            maincotent11[i].index = i
+            maincotent11[i].onclick = function () {
+                for (i = 0; i < maincotent11.length; i++) {
+                    main[i].style.display = 'none'
+                    maincotent11[i].id = ''
+                }
+                this.id = 'active'
+                main[this.index].style.display = 'block'
+            }
+        }
+        FirstAidMedic.onclick = function () {
+            FirstAid.style.display = 'block'
+            setTimeout(function () { FirstAid.style.display = 'none' }, 1500)
+        }
+        firstAidKitShop.onclick = function () {
+            firstAidKit.style.display = 'block'
+            setTimeout(function () { firstAidKit.style.display = 'none' }, 1500)
+        }
+    </script>
+</body>
+
+</html>

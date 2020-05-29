@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/mui.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background :#6badeb;
+        }
+
+        header {
+            margin-top: 0px !important;
+        }
+
+  
+
+        .Img span img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .RightImg img {
+            width: 150px;
+            height: 150px;
+            margin-top: -48px;
+            margin-right: -40px;
+        }
+
+        header {
+            background-color: #1887f7 !important;
+            border-bottom: none !important;
+            box-shadow: 0 1px 6px #1887f7 !important;
+        }
+
+        header h1 {
+            color: #fff !important;
+            font-size: 22px !important;
+        }
+
+        .bgc {
+            color: white !important;
+        }
+
+        .img1 img {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .img2 {
+            display: none;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .img3 {
+            display: none;
+        }
+
+        .img4 {
+            display: none;
+        }
+
+        .img3 img {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .img4 img {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .start {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+        }
+
+        .start img {
+            width: 120px;
+            height: 120px;
+            margin-top: 250px;
+            margin-left: 150px;
+            animation: start 0.5s ease infinite;
+        }
+
+        @keyframes start{
+            0%{
+                width: 120px;
+            height: 120px;
+            }
+            50%{
+                width: 130px;
+            height: 130px;
+            }
+            100%{
+                width: 120px;
+            height: 120px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="mui-bar mui-bar-nav">
+        <a href="../index.html"><i class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left bgc"></i></a>
+        <h1 class="mui-title">教程</h1>
+        <a class="mui-pull-right RightImg"><img src="../img/achieveImg1/topRight.png" alt=""></a>
+    </header>
+    <div id="img1" class="img1"><img src="../img/teachImg/1.png" alt=""></div>
+    <div id="img2" class="img2"><img src="../img/teachImg/2.png" alt=""></div>
+    <div id="img3" class="img3"><img src="../img/teachImg/3.png" alt=""></div>
+    <div id="img4" class="img4"><img src="../img/teachImg/4.png" alt=""></div>
+    <div id="start" class="start"> <a href="./game.html"><img src="../img/teachImg/start.png" alt=""></a></div>
+    <script>
+        var img1 = document.getElementById('img1')
+        var img2 = document.getElementById('img2')
+        var img3 = document.getElementById('img3')
+        var img4 = document.getElementById('img4')
+        var start = document.getElementById('start')
+
+        img1.onclick = function () {
+            img1.style.display = 'none'
+            img2.style.display = 'block'
+        }
+        img2.onclick = function () {
+            img2.style.display = 'none'
+            img3.style.display = 'block'
+        }
+        img3.onclick = function () {
+            img3.style.display = 'none'
+            img4.style.display = 'block'
+        }
+        img4.onclick = function () {
+            img4.style.display = 'none'
+            start.style.display = 'block'
+        }
+    </script>
+</body>
+
+</html>
